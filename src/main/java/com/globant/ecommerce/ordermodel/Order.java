@@ -1,10 +1,14 @@
 package com.globant.ecommerce.ordermodel;
 
 import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+/**
+ * 
+ * @author pravin.dake
+ * 
+ */
 @Entity
 public class Order {
 	@javax.persistence.Id

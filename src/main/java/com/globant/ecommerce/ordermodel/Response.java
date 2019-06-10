@@ -4,7 +4,12 @@ import java.util.List;
 import java.util.Map;
 
 import org.json.JSONObject;
-
+/**
+ * 
+ * @author pravin.dake
+ * This method is used to send response of method in JSON format.
+ * 
+ */
 public class Response {
 	
 	private String Message;

@@ -13,12 +13,12 @@ import com.globant.ecommerce.ordermodel.Order;
 public class OrderDAOImpl implements OrderDAO {
 	@Autowired
 	private JdbcTemplate jdbctemplate;
-
 	
 	@Override
 	public int createOrder(Order order) {
 		final String sql = "insert into ecommerce.order(orderid,orderdate,shippeddate,expdeliverydate,address,totalamount) values(?,?,?,?,?,?)";
-		Object param[] = {order.getOrderid(),order.getOrderdate(),order.getShippeddate(),order.getExpdeliverydate(),order.getAddress(),order.getTotalamount()};
+		Object param[] = { order.getOrderid(), order.getOrderdate(), order.getShippeddate(), order.getExpdeliverydate(),
+				order.getAddress(), order.getTotalamount() };
 		int res = jdbctemplate.update(sql, param);
 		return res;
 	}
@@ -34,11 +34,11 @@ public class OrderDAOImpl implements OrderDAO {
 	}
 
 	@Override
-	public int updateOrderStatus(String status,int id) {
+	public int updateOrderStatus(String status, int id) {
 		// TODO Auto-generated method stub
 		final String sql = "update ecommerce.order set orderstatus=? where orderid=?";
-		Object param[] = {status,id};
-		int orderstatus=jdbctemplate.update(sql, param);
+		Object param[] = { status, id };
+		int orderstatus = jdbctemplate.update(sql, param);
 		return orderstatus;
 	}
 

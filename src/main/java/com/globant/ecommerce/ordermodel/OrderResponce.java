@@ -1,5 +1,9 @@
 package com.globant.ecommerce.ordermodel;
-
+/**
+ * 
+ * @author pravin.dake
+ * this class is used to send the result of API in JSON Format
+ */
 public class OrderResponce {
 	
 	private String message;

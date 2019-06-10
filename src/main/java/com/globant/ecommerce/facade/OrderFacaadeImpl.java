@@ -7,10 +7,12 @@ import org.springframework.stereotype.Repository;
 
 import com.globant.ecommerce.ordermodel.Order;
 import com.globant.ecommerce.services.OrderServiceImpl;
+
 @Repository("orderFacade")
 public class OrderFacaadeImpl implements OrderFacade {
 	@Autowired
 	private OrderServiceImpl orderservice;
+
 	@Override
 	public int placeOrder(Order order) {
 		// TODO Auto-generated method stub
@@ -34,10 +36,5 @@ public class OrderFacaadeImpl implements OrderFacade {
 		// TODO Auto-generated method stub
 		return orderservice.authenticate(authToken);
 	}
-
-	
-
-
-	
 
 }
