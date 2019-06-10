@@ -20,12 +20,23 @@ import com.globant.ecommerce.facade.OrderFacaadeImpl;
 import com.globant.ecommerce.ordermodel.Order;
 import com.globant.ecommerce.ordermodel.OrderResponce;
 import com.globant.ecommerce.ordermodel.Response;
-
+/**
+ * 
+ * @author pravin.dake
+ *
+ */
 @RestController
 public class OrderRestController {
 	@Autowired
 	private OrderFacaadeImpl orderfacade;
-
+	
+	/**
+	 * 
+	 * @param data
+	 * @param authToken
+	 * @return
+	 * @throws JSONException
+	 */
 	@PostMapping("/order/placeorder")
 	public Response doOrder(@RequestBody String data,
 			@RequestHeader(value = "authToken", defaultValue = "") String authToken) throws JSONException {
@@ -64,7 +75,12 @@ public class OrderRestController {
 		res.setStatus(401);
 		return res;
 	}
-
+	/**
+	 * 
+	 * @param orderid
+	 * @param authToken
+	 * @return
+	 */
 	@GetMapping("/order/placeorder/{orderid}")
 	public OrderResponce getOrderById(@PathVariable("orderid") int orderid,
 			@RequestHeader(value = "authToken", defaultValue = "") String authToken) {
@@ -87,7 +103,16 @@ public class OrderRestController {
 		orderresponce.setStatus("401");
 		return orderresponce;
 	}
-
+	/**
+	 * This Method is used to update the status of Order as follows
+	 * Odered(15)
+	 * Shipped(19)
+	 * Delivered(4)
+	 * @param data
+	 * @param authToken
+	 * @return
+	 * @throws JSONException
+	 */
 	@PostMapping("/order/shiporder/updatestatus")
 	public Response updateOrderStatus(@RequestBody String data,
 			@RequestHeader(value = "authToken", defaultValue = "") String authToken) throws JSONException {
