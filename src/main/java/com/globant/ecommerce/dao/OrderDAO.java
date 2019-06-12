@@ -10,13 +10,13 @@ import com.globant.ecommerce.ordermodel.Order;
  */
 public interface OrderDAO {
 	/**
-	 * insert the data of order to track the order
+	 * this method is used to insert the data of order to track the order
 	 * @param order
 	 * @return
 	 */
 	public int createOrder(Order order);
 	/**
-	 * fetch the order of details by its orderid
+	 * this method is used to fetch the order of details by its orderid
 	 * @param id
 	 * @return
 	 */

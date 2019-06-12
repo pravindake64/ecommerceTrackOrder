@@ -41,7 +41,7 @@ public class OrderRestController {
 	public Response doOrder(@RequestBody String data,
 			@RequestHeader(value = "authToken", defaultValue = "") String authToken) throws JSONException {
 		Response res = new Response();
-		if (orderfacade.authenticate(authToken)) {
+		if (orderfacade.authenticate(authToken)) {			//Checking wether the user is logged in or not
 			Order order = new Order();
 			JSONObject jorder = null;
 			jorder = new JSONObject(data);
@@ -85,7 +85,7 @@ public class OrderRestController {
 	public OrderResponce getOrderById(@PathVariable("orderid") int orderid,
 			@RequestHeader(value = "authToken", defaultValue = "") String authToken) {
 		OrderResponce orderresponce = new OrderResponce();
-		if (orderfacade.authenticate(authToken)) {
+		if (orderfacade.authenticate(authToken)) {		//Checking wether the user is logged in or not
 			Order order = new Order();
 			order = orderfacade.getOrderById(orderid);
 			if (order.equals(null)) {
@@ -117,7 +117,7 @@ public class OrderRestController {
 	public Response updateOrderStatus(@RequestBody String data,
 			@RequestHeader(value = "authToken", defaultValue = "") String authToken) throws JSONException {
 		Response resp = new Response();
-		if (orderfacade.authenticate(authToken)) {
+		if (orderfacade.authenticate(authToken)) {		//Checking wether the user is logged in or not
 			JSONObject jdata = null;
 			jdata = new JSONObject(data);
 			Order order = new Order();
